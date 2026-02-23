@@ -1,0 +1,7 @@
+Rate the answer quality. Output only one number: 1=poor, 2=fair, 3=good, 4=excellent.
+
+Question: {{query}}
+Reference: {{reference}}
+Answer: {{response}}
+
+Output only a single number (1, 2, 3, or 4).

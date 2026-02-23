@@ -1,0 +1,7 @@
+Classify the answer. Output only one number: 0=incorrect, 1=partial, 2=correct.
+
+Question: {{query}}
+Reference: {{reference}}
+Answer: {{response}}
+
+Output only a single number (0, 1, or 2).

@@ -1,0 +1,109 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: arcanedb
+    networks:
+      - arcanenet
+
+  # Tempo runs as user 10001, and docker compose creates the volume as root.
+  # As such, we need to chown the volume in order for Tempo to start correctly.
+  init:
+    image: busybox:latest
+    user: root
+    entrypoint:
+      - "chown"
+      - "10001:10001"
+      - "/var/tempo"
+    volumes:
+      - tempo-data:/var/tempo
+
+  tempo:
+    image: grafana/tempo:latest
+    container_name: tempo
+    command: [ "-config.file=/etc/tempo/tempo.yaml" ]
+    ports:
+      - "3200:3200"   # HTTP API
+      - "4317"        # OTLP gRPC receiver (internal)
+      - "4318"        # OTLP HTTP receiver (internal)
+    volumes:
+      - ./tempo-config.yaml:/etc/tempo/tempo.yaml
+      - tempo-data:/var/tempo
+    networks:
+      - arcanenet
+    depends_on:
+      - init
+
+  otel-collector:
+    image: otel/opentelemetry-collector:0.86.0
+    container_name: otel-collector
+    command: [ "--config=/etc/otel-collector.yaml" ]
+    volumes:
+      - ./otel-config.yml:/etc/otel-collector.yaml
+    ports:
+      - "4317:4317"   # OTLP gRPC receiver
+      - "4318:4318"   # OTLP HTTP receiver
+    networks:
+      - arcanenet
+    depends_on:
+      - tempo
+
+  # sonarqube-db:
+  #   image: postgres:15-alpine
+  #   container_name: sonarqube-db
+  #   environment:
+  #     POSTGRES_USER: sonar
+  #     POSTGRES_PASSWORD: sonar
+  #     POSTGRES_DB: sonar
+  #   volumes:
+  #     - sonarqube-db-data:/var/lib/postgresql/data
+  #   networks:
+  #     - arcanenet
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U sonar"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5
+
+  # sonarqube:
+  #   image: sonarqube:community
+  #   container_name: sonarqube
+  #   depends_on:
+  #     sonarqube-db:
+  #       condition: service_healthy
+  #   environment:
+  #     SONAR_JDBC_URL: jdbc:postgresql://sonarqube-db:5432/sonar
+  #     SONAR_JDBC_USERNAME: sonar
+  #     SONAR_JDBC_PASSWORD: sonar
+  #     SONAR_ES_BOOTSTRAP_CHECKS_DISABLE: true
+  #   volumes:
+  #     - sonarqube-data:/opt/sonarqube/data
+  #     - sonarqube-extensions:/opt/sonarqube/extensions
+  #     - sonarqube-logs:/opt/sonarqube/logs
+  #   ports:
+  #     - "9000:9000"
+  #   networks:
+  #     - arcanenet
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "curl -f http://localhost:9000/api/system/status || exit 1"]
+  #     interval: 30s
+  #     timeout: 10s
+  #     retries: 5
+
+volumes:
+  tempo-data:
+  postgres-data:
+  sonarqube-db-data:
+  sonarqube-data:
+  sonarqube-extensions:
+  sonarqube-logs:
+networks:
+  arcanenet:
+    driver: bridge

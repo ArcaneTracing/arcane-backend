@@ -1,0 +1,7 @@
+Rate the following answer from 0-10 based on correctness and relevance.
+
+Question: {{query}}
+Reference: {{reference}}
+Answer: {{response}}
+
+Output only a single number.

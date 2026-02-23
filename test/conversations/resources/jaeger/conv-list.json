@@ -1,0 +1,2628 @@
+{
+    "result": {
+        "resourceSpans": [
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "82760187488b369976271126ff15da86",
+                                "spanId": "7c474e3c73845f59",
+                                "parentSpanId": "e8ada368c633be26",
+                                "flags": 256,
+                                "name": "ChatOpenAI",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981205471076096",
+                                "endTimeUnixNano": "1768981206414874112",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [[{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"SystemMessage\"], \"kwargs\": {\"content\": \"You are a helpful assistant\", \"type\": \"system\"}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"what is the weather in sf\", \"type\": \"human\", \"id\": \"e9cf3d25-1e7f-4096-9703-b0ae891eb934\"}}]]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.content",
+                                        "value": {
+                                            "stringValue": "You are a helpful assistant"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "system"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.1.message.content",
+                                        "value": {
+                                            "stringValue": "what is the weather in sf"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.1.message.role",
+                                        "value": {
+                                            "stringValue": "user"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.invocation_parameters",
+                                        "value": {
+                                            "stringValue": "{\"model\": \"gpt-4o-mini\", \"model_name\": \"gpt-4o-mini\", \"stream\": false, \"_type\": \"openai-chat\", \"stop\": null, \"tools\": [{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get weather for a given city.\", \"parameters\": {\"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.model_name",
+                                        "value": {
+                                            "stringValue": "gpt-4o-mini-2024-07-18"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.output_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "assistant"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.arguments",
+                                        "value": {
+                                            "stringValue": "{\"city\":\"San Francisco\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.name",
+                                        "value": {
+                                            "stringValue": "get_weather"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.output_messages.0.message.tool_calls.0.tool_call.id",
+                                        "value": {
+                                            "stringValue": "call_BPWK65d6FKKVVjH4aq8vSMDa"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.provider",
+                                        "value": {
+                                            "stringValue": "openai"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.system",
+                                        "value": {
+                                            "stringValue": "openai"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.completion",
+                                        "value": {
+                                            "intValue": "15"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.completion_details.audio",
+                                        "value": {
+                                            "intValue": "0"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.completion_details.reasoning",
+                                        "value": {
+                                            "intValue": "0"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.prompt",
+                                        "value": {
+                                            "intValue": "56"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.prompt_details.audio",
+                                        "value": {
+                                            "intValue": "0"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.prompt_details.cache_read",
+                                        "value": {
+                                            "intValue": "0"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.total",
+                                        "value": {
+                                            "intValue": "71"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.tools.0.tool.json_schema",
+                                        "value": {
+                                            "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get weather for a given city.\", \"parameters\": {\"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}}"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 1, \"langgraph_node\": \"model\", \"langgraph_triggers\": [\"branch:to:model\"], \"langgraph_path\": [\"__pregel_pull\", \"model\"], \"langgraph_checkpoint_ns\": \"model:1a54c7f6-5dcf-c377-20bc-25239506546c\", \"checkpoint_ns\": \"model:1a54c7f6-5dcf-c377-20bc-25239506546c\", \"ls_provider\": \"openai\", \"ls_model_name\": \"gpt-4o-mini\", \"ls_model_type\": \"chat\", \"ls_temperature\": null}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "LLM"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "{\"generations\": [[{\"text\": \"\", \"generation_info\": {\"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ChatGeneration\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6sWjpDZN0nngOIl4Zh4sGkceKF\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"id\": \"lc_run--75cc9b7b-2e23-40d3-aaf0-7592778f0d58-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"type\": \"tool_call\"}], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}, \"invalid_tool_calls\": []}}}]], \"llm_output\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6sWjpDZN0nngOIl4Zh4sGkceKF\", \"service_tier\": \"default\"}, \"run\": null, \"type\": \"LLMResult\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "82760187488b369976271126ff15da86",
+                                "spanId": "7638855cbab848ad",
+                                "parentSpanId": "e8ada368c633be26",
+                                "flags": 256,
+                                "name": "model_to_tools",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981206450984960",
+                                "endTimeUnixNano": "1768981206451638016",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"what is the weather in sf\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"e9cf3d25-1e7f-4096-9703-b0ae891eb934\"}, {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6sWjpDZN0nngOIl4Zh4sGkceKF\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--75cc9b7b-2e23-40d3-aaf0-7592778f0d58-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.content",
+                                        "value": {
+                                            "stringValue": "what is the weather in sf"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "user"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 1, \"langgraph_node\": \"model\", \"langgraph_triggers\": [\"branch:to:model\"], \"langgraph_path\": [\"__pregel_pull\", \"model\"], \"langgraph_checkpoint_ns\": \"model:1a54c7f6-5dcf-c377-20bc-25239506546c\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "CHAIN"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "[\"Send(node='tools', arg={'__type': 'tool_call_with_context', 'tool_call': {'name': 'get_weather', 'args': {'city': 'San Francisco'}, 'id': 'call_BPWK65d6FKKVVjH4aq8vSMDa', 'type': 'tool_call'}, 'state': {'messages': [HumanMessage(content='what is the weather in sf', additional_kwargs={}, response_metadata={}, id='e9cf3d25-1e7f-4096-9703-b0ae891eb934'), AIMessage(content='', additional_kwargs={'tool_calls': [{'id': 'call_BPWK65d6FKKVVjH4aq8vSMDa', 'function': {'arguments': '{\\\"city\\\":\\\"San Francisco\\\"}', 'name': 'get_weather'}, 'type': 'function'}], 'refusal': None}, response_metadata={'token_usage': {'completion_tokens': 15, 'prompt_tokens': 56, 'total_tokens': 71, 'completion_tokens_details': {'accepted_prediction_tokens': 0, 'audio_tokens': 0, 'reasoning_tokens': 0, 'rejected_prediction_tokens': 0}, 'prompt_tokens_details': {'audio_tokens': 0, 'cached_tokens': 0}}, 'model_name': 'gpt-4o-mini-2024-07-18', 'system_fingerprint': 'fp_8bbc38b4db', 'id': 'chatcmpl-D0N6sWjpDZN0nngOIl4Zh4sGkceKF', 'service_tier': 'default', 'finish_reason': 'tool_calls', 'logprobs': None}, id='lc_run--75cc9b7b-2e23-40d3-aaf0-7592778f0d58-0', tool_calls=[{'name': 'get_weather', 'args': {'city': 'San Francisco'}, 'id': 'call_BPWK65d6FKKVVjH4aq8vSMDa', 'type': 'tool_call'}], usage_metadata={'input_tokens': 56, 'output_tokens': 15, 'total_tokens': 71, 'input_token_details': {'audio': 0, 'cache_read': 0}, 'output_token_details': {'audio': 0, 'reasoning': 0}})]}})\"]"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "82760187488b369976271126ff15da86",
+                                "spanId": "e8ada368c633be26",
+                                "parentSpanId": "d9b8a64e292f8f7e",
+                                "flags": 256,
+                                "name": "model",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981205458812928",
+                                "endTimeUnixNano": "1768981206466998016",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"what is the weather in sf\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"e9cf3d25-1e7f-4096-9703-b0ae891eb934\"}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.content",
+                                        "value": {
+                                            "stringValue": "what is the weather in sf"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "user"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 1, \"langgraph_node\": \"model\", \"langgraph_triggers\": [\"branch:to:model\"], \"langgraph_path\": [\"__pregel_pull\", \"model\"], \"langgraph_checkpoint_ns\": \"model:1a54c7f6-5dcf-c377-20bc-25239506546c\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "CHAIN"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6sWjpDZN0nngOIl4Zh4sGkceKF\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--75cc9b7b-2e23-40d3-aaf0-7592778f0d58-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "82760187488b369976271126ff15da86",
+                                "spanId": "6a87dd0023613edc",
+                                "parentSpanId": "a0cfcad853b810f6",
+                                "flags": 256,
+                                "name": "get_weather",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981206488753920",
+                                "endTimeUnixNano": "1768981206491076864",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{'city': 'San Francisco'}"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 2, \"langgraph_node\": \"tools\", \"langgraph_triggers\": [\"__pregel_push\"], \"langgraph_path\": [\"__pregel_push\", 0, false], \"langgraph_checkpoint_ns\": \"tools:8f608efc-b85f-69e1-dba8-eb92fa553221\", \"checkpoint_ns\": \"tools:8f608efc-b85f-69e1-dba8-eb92fa553221\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "TOOL"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "{\"content\": \"It's always sunny in San Francisco!\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"get_weather\", \"id\": null, \"tool_call_id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"artifact\": null, \"status\": \"success\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    },
+                                    {
+                                        "key": "tool.description",
+                                        "value": {
+                                            "stringValue": "Get weather for a given city."
+                                        }
+                                    },
+                                    {
+                                        "key": "tool.name",
+                                        "value": {
+                                            "stringValue": "get_weather"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "82760187488b369976271126ff15da86",
+                                "spanId": "a044dcee5f34e742",
+                                "parentSpanId": "a0cfcad853b810f6",
+                                "flags": 256,
+                                "name": "tools_to_model",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981206513854976",
+                                "endTimeUnixNano": "1768981206514386944",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"what is the weather in sf\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"e9cf3d25-1e7f-4096-9703-b0ae891eb934\"}, {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6sWjpDZN0nngOIl4Zh4sGkceKF\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--75cc9b7b-2e23-40d3-aaf0-7592778f0d58-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}, {\"content\": \"It's always sunny in San Francisco!\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"get_weather\", \"id\": \"1ab0840a-d376-4699-8f24-8476322c9a4b\", \"tool_call_id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"artifact\": null, \"status\": \"success\"}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.content",
+                                        "value": {
+                                            "stringValue": "what is the weather in sf"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "user"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 2, \"langgraph_node\": \"tools\", \"langgraph_triggers\": [\"__pregel_push\"], \"langgraph_path\": [\"__pregel_push\", 0, false], \"langgraph_checkpoint_ns\": \"tools:8f608efc-b85f-69e1-dba8-eb92fa553221\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "CHAIN"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "model"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "82760187488b369976271126ff15da86",
+                                "spanId": "a0cfcad853b810f6",
+                                "parentSpanId": "d9b8a64e292f8f7e",
+                                "flags": 256,
+                                "name": "tools",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981206484004864",
+                                "endTimeUnixNano": "1768981206532422144",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"__type\": \"tool_call_with_context\", \"tool_call\": {\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"type\": \"tool_call\"}, \"state\": {\"messages\": [{\"content\": \"what is the weather in sf\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"e9cf3d25-1e7f-4096-9703-b0ae891eb934\"}, {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6sWjpDZN0nngOIl4Zh4sGkceKF\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--75cc9b7b-2e23-40d3-aaf0-7592778f0d58-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}]}}"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 2, \"langgraph_node\": \"tools\", \"langgraph_triggers\": [\"__pregel_push\"], \"langgraph_path\": [\"__pregel_push\", 0, false], \"langgraph_checkpoint_ns\": \"tools:8f608efc-b85f-69e1-dba8-eb92fa553221\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "CHAIN"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"It's always sunny in San Francisco!\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"get_weather\", \"id\": \"1ab0840a-d376-4699-8f24-8476322c9a4b\", \"tool_call_id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"artifact\": null, \"status\": \"success\"}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "82760187488b369976271126ff15da86",
+                                "spanId": "2141f1f3660b7452",
+                                "parentSpanId": "efb9d59724526412",
+                                "flags": 256,
+                                "name": "ChatOpenAI",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981206559235072",
+                                "endTimeUnixNano": "1768981207539676928",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [[{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"SystemMessage\"], \"kwargs\": {\"content\": \"You are a helpful assistant\", \"type\": \"system\"}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"what is the weather in sf\", \"type\": \"human\", \"id\": \"e9cf3d25-1e7f-4096-9703-b0ae891eb934\"}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6sWjpDZN0nngOIl4Zh4sGkceKF\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"id\": \"lc_run--75cc9b7b-2e23-40d3-aaf0-7592778f0d58-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"type\": \"tool_call\"}], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}, \"invalid_tool_calls\": []}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"ToolMessage\"], \"kwargs\": {\"content\": \"It's always sunny in San Francisco!\", \"type\": \"tool\", \"name\": \"get_weather\", \"id\": \"1ab0840a-d376-4699-8f24-8476322c9a4b\", \"tool_call_id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"status\": \"success\"}}]]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.content",
+                                        "value": {
+                                            "stringValue": "You are a helpful assistant"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "system"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.1.message.content",
+                                        "value": {
+                                            "stringValue": "what is the weather in sf"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.1.message.role",
+                                        "value": {
+                                            "stringValue": "user"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.2.message.role",
+                                        "value": {
+                                            "stringValue": "assistant"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.arguments",
+                                        "value": {
+                                            "stringValue": "{\"city\":\"San Francisco\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.name",
+                                        "value": {
+                                            "stringValue": "get_weather"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.2.message.tool_calls.0.tool_call.id",
+                                        "value": {
+                                            "stringValue": "call_BPWK65d6FKKVVjH4aq8vSMDa"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.3.message.content",
+                                        "value": {
+                                            "stringValue": "It's always sunny in San Francisco!"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.3.message.name",
+                                        "value": {
+                                            "stringValue": "get_weather"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.3.message.role",
+                                        "value": {
+                                            "stringValue": "tool"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.3.message.tool_call_id",
+                                        "value": {
+                                            "stringValue": "call_BPWK65d6FKKVVjH4aq8vSMDa"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.invocation_parameters",
+                                        "value": {
+                                            "stringValue": "{\"model\": \"gpt-4o-mini\", \"model_name\": \"gpt-4o-mini\", \"stream\": false, \"_type\": \"openai-chat\", \"stop\": null, \"tools\": [{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get weather for a given city.\", \"parameters\": {\"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.model_name",
+                                        "value": {
+                                            "stringValue": "gpt-4o-mini-2024-07-18"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.output_messages.0.message.content",
+                                        "value": {
+                                            "stringValue": "The weather in San Francisco is sunny!"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.output_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "assistant"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.provider",
+                                        "value": {
+                                            "stringValue": "openai"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.system",
+                                        "value": {
+                                            "stringValue": "openai"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.completion",
+                                        "value": {
+                                            "intValue": "9"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.completion_details.audio",
+                                        "value": {
+                                            "intValue": "0"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.completion_details.reasoning",
+                                        "value": {
+                                            "intValue": "0"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.prompt",
+                                        "value": {
+                                            "intValue": "86"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.prompt_details.audio",
+                                        "value": {
+                                            "intValue": "0"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.prompt_details.cache_read",
+                                        "value": {
+                                            "intValue": "0"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.total",
+                                        "value": {
+                                            "intValue": "95"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.tools.0.tool.json_schema",
+                                        "value": {
+                                            "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get weather for a given city.\", \"parameters\": {\"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}}"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 3, \"langgraph_node\": \"model\", \"langgraph_triggers\": [\"branch:to:model\"], \"langgraph_path\": [\"__pregel_pull\", \"model\"], \"langgraph_checkpoint_ns\": \"model:91acc35e-a7b4-48b6-230b-a70c02d7310d\", \"checkpoint_ns\": \"model:91acc35e-a7b4-48b6-230b-a70c02d7310d\", \"ls_provider\": \"openai\", \"ls_model_name\": \"gpt-4o-mini\", \"ls_model_type\": \"chat\", \"ls_temperature\": null}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "LLM"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "{\"generations\": [[{\"text\": \"The weather in San Francisco is sunny!\", \"generation_info\": {\"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ChatGeneration\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"The weather in San Francisco is sunny!\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 9, \"prompt_tokens\": 86, \"total_tokens\": 95, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6tHzradH3h11TvvMHwdyvLJn6S\", \"service_tier\": \"default\", \"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ai\", \"id\": \"lc_run--8e4598b8-de33-4111-81a6-859fdbb57511-0\", \"usage_metadata\": {\"input_tokens\": 86, \"output_tokens\": 9, \"total_tokens\": 95, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}, \"tool_calls\": [], \"invalid_tool_calls\": []}}}]], \"llm_output\": {\"token_usage\": {\"completion_tokens\": 9, \"prompt_tokens\": 86, \"total_tokens\": 95, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6tHzradH3h11TvvMHwdyvLJn6S\", \"service_tier\": \"default\"}, \"run\": null, \"type\": \"LLMResult\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "82760187488b369976271126ff15da86",
+                                "spanId": "7fb76e29a0e7ad55",
+                                "parentSpanId": "efb9d59724526412",
+                                "flags": 256,
+                                "name": "model_to_tools",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981207563886848",
+                                "endTimeUnixNano": "1768981207564286976",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"what is the weather in sf\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"e9cf3d25-1e7f-4096-9703-b0ae891eb934\"}, {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6sWjpDZN0nngOIl4Zh4sGkceKF\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--75cc9b7b-2e23-40d3-aaf0-7592778f0d58-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}, {\"content\": \"It's always sunny in San Francisco!\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"get_weather\", \"id\": \"1ab0840a-d376-4699-8f24-8476322c9a4b\", \"tool_call_id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"artifact\": null, \"status\": \"success\"}, {\"content\": \"The weather in San Francisco is sunny!\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 9, \"prompt_tokens\": 86, \"total_tokens\": 95, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6tHzradH3h11TvvMHwdyvLJn6S\", \"service_tier\": \"default\", \"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--8e4598b8-de33-4111-81a6-859fdbb57511-0\", \"tool_calls\": [], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 86, \"output_tokens\": 9, \"total_tokens\": 95, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.content",
+                                        "value": {
+                                            "stringValue": "what is the weather in sf"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "user"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 3, \"langgraph_node\": \"model\", \"langgraph_triggers\": [\"branch:to:model\"], \"langgraph_path\": [\"__pregel_pull\", \"model\"], \"langgraph_checkpoint_ns\": \"model:91acc35e-a7b4-48b6-230b-a70c02d7310d\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "CHAIN"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "__end__"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "82760187488b369976271126ff15da86",
+                                "spanId": "efb9d59724526412",
+                                "parentSpanId": "d9b8a64e292f8f7e",
+                                "flags": 256,
+                                "name": "model",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981206549732864",
+                                "endTimeUnixNano": "1768981207572936960",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"what is the weather in sf\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"e9cf3d25-1e7f-4096-9703-b0ae891eb934\"}, {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6sWjpDZN0nngOIl4Zh4sGkceKF\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--75cc9b7b-2e23-40d3-aaf0-7592778f0d58-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}, {\"content\": \"It's always sunny in San Francisco!\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"get_weather\", \"id\": \"1ab0840a-d376-4699-8f24-8476322c9a4b\", \"tool_call_id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"artifact\": null, \"status\": \"success\"}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.content",
+                                        "value": {
+                                            "stringValue": "what is the weather in sf"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "user"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 3, \"langgraph_node\": \"model\", \"langgraph_triggers\": [\"branch:to:model\"], \"langgraph_path\": [\"__pregel_pull\", \"model\"], \"langgraph_checkpoint_ns\": \"model:91acc35e-a7b4-48b6-230b-a70c02d7310d\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "CHAIN"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"The weather in San Francisco is sunny!\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 9, \"prompt_tokens\": 86, \"total_tokens\": 95, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6tHzradH3h11TvvMHwdyvLJn6S\", \"service_tier\": \"default\", \"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--8e4598b8-de33-4111-81a6-859fdbb57511-0\", \"tool_calls\": [], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 86, \"output_tokens\": 9, \"total_tokens\": 95, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "82760187488b369976271126ff15da86",
+                                "spanId": "d9b8a64e292f8f7e",
+                                "flags": 256,
+                                "name": "LangGraph",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981205450540032",
+                                "endTimeUnixNano": "1768981207582107904",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"role\": \"user\", \"content\": \"what is the weather in sf\"}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "user"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "CHAIN"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"what is the weather in sf\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"e9cf3d25-1e7f-4096-9703-b0ae891eb934\"}, {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6sWjpDZN0nngOIl4Zh4sGkceKF\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--75cc9b7b-2e23-40d3-aaf0-7592778f0d58-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}, {\"content\": \"It's always sunny in San Francisco!\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"get_weather\", \"id\": \"1ab0840a-d376-4699-8f24-8476322c9a4b\", \"tool_call_id\": \"call_BPWK65d6FKKVVjH4aq8vSMDa\", \"artifact\": null, \"status\": \"success\"}, {\"content\": \"The weather in San Francisco is sunny!\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 9, \"prompt_tokens\": 86, \"total_tokens\": 95, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6tHzradH3h11TvvMHwdyvLJn6S\", \"service_tier\": \"default\", \"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--8e4598b8-de33-4111-81a6-859fdbb57511-0\", \"tool_calls\": [], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 86, \"output_tokens\": 9, \"total_tokens\": 95, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "51c51be310e84d6986e26024faadc550",
+                                "spanId": "ba622be15d8a70d3",
+                                "parentSpanId": "3b7d34cd5fc6d1dd",
+                                "flags": 256,
+                                "name": "ChatOpenAI",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981174694500864",
+                                "endTimeUnixNano": "1768981176400837888",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [[{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"SystemMessage\"], \"kwargs\": {\"content\": \"You are a helpful assistant\", \"type\": \"system\"}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"what is the weather in sf\", \"type\": \"human\", \"id\": \"58bb8c89-41b2-41ad-9934-a7e179b26419\"}}]]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.content",
+                                        "value": {
+                                            "stringValue": "You are a helpful assistant"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "system"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.1.message.content",
+                                        "value": {
+                                            "stringValue": "what is the weather in sf"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.1.message.role",
+                                        "value": {
+                                            "stringValue": "user"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.invocation_parameters",
+                                        "value": {
+                                            "stringValue": "{\"model\": \"gpt-4o-mini\", \"model_name\": \"gpt-4o-mini\", \"stream\": false, \"_type\": \"openai-chat\", \"stop\": null, \"tools\": [{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get weather for a given city.\", \"parameters\": {\"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.model_name",
+                                        "value": {
+                                            "stringValue": "gpt-4o-mini-2024-07-18"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.output_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "assistant"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.arguments",
+                                        "value": {
+                                            "stringValue": "{\"city\":\"San Francisco\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.output_messages.0.message.tool_calls.0.tool_call.function.name",
+                                        "value": {
+                                            "stringValue": "get_weather"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.output_messages.0.message.tool_calls.0.tool_call.id",
+                                        "value": {
+                                            "stringValue": "call_oyU3Xia66hbRxUJdVjLnnzMP"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.provider",
+                                        "value": {
+                                            "stringValue": "openai"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.system",
+                                        "value": {
+                                            "stringValue": "openai"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.completion",
+                                        "value": {
+                                            "intValue": "15"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.completion_details.audio",
+                                        "value": {
+                                            "intValue": "0"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.completion_details.reasoning",
+                                        "value": {
+                                            "intValue": "0"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.prompt",
+                                        "value": {
+                                            "intValue": "56"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.prompt_details.audio",
+                                        "value": {
+                                            "intValue": "0"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.prompt_details.cache_read",
+                                        "value": {
+                                            "intValue": "0"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.total",
+                                        "value": {
+                                            "intValue": "71"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.tools.0.tool.json_schema",
+                                        "value": {
+                                            "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get weather for a given city.\", \"parameters\": {\"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}}"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 1, \"langgraph_node\": \"model\", \"langgraph_triggers\": [\"branch:to:model\"], \"langgraph_path\": [\"__pregel_pull\", \"model\"], \"langgraph_checkpoint_ns\": \"model:3d523ee1-1a1d-fb3e-c3ce-479c8953a4b3\", \"checkpoint_ns\": \"model:3d523ee1-1a1d-fb3e-c3ce-479c8953a4b3\", \"ls_provider\": \"openai\", \"ls_model_name\": \"gpt-4o-mini\", \"ls_model_type\": \"chat\", \"ls_temperature\": null}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "LLM"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "{\"generations\": [[{\"text\": \"\", \"generation_info\": {\"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ChatGeneration\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_c4585b5b9c\", \"id\": \"chatcmpl-D0N6NXwN292XvRiOO9rxgQjpJ7LhK\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"id\": \"lc_run--993fbdba-846e-47cc-8e9e-cae83b5ef696-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"type\": \"tool_call\"}], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}, \"invalid_tool_calls\": []}}}]], \"llm_output\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_c4585b5b9c\", \"id\": \"chatcmpl-D0N6NXwN292XvRiOO9rxgQjpJ7LhK\", \"service_tier\": \"default\"}, \"run\": null, \"type\": \"LLMResult\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "51c51be310e84d6986e26024faadc550",
+                                "spanId": "47a1474f226ccc9a",
+                                "parentSpanId": "3b7d34cd5fc6d1dd",
+                                "flags": 256,
+                                "name": "model_to_tools",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981176455374848",
+                                "endTimeUnixNano": "1768981176457268992",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"what is the weather in sf\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"58bb8c89-41b2-41ad-9934-a7e179b26419\"}, {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_c4585b5b9c\", \"id\": \"chatcmpl-D0N6NXwN292XvRiOO9rxgQjpJ7LhK\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--993fbdba-846e-47cc-8e9e-cae83b5ef696-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.content",
+                                        "value": {
+                                            "stringValue": "what is the weather in sf"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "user"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 1, \"langgraph_node\": \"model\", \"langgraph_triggers\": [\"branch:to:model\"], \"langgraph_path\": [\"__pregel_pull\", \"model\"], \"langgraph_checkpoint_ns\": \"model:3d523ee1-1a1d-fb3e-c3ce-479c8953a4b3\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "CHAIN"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "[\"Send(node='tools', arg={'__type': 'tool_call_with_context', 'tool_call': {'name': 'get_weather', 'args': {'city': 'San Francisco'}, 'id': 'call_oyU3Xia66hbRxUJdVjLnnzMP', 'type': 'tool_call'}, 'state': {'messages': [HumanMessage(content='what is the weather in sf', additional_kwargs={}, response_metadata={}, id='58bb8c89-41b2-41ad-9934-a7e179b26419'), AIMessage(content='', additional_kwargs={'tool_calls': [{'id': 'call_oyU3Xia66hbRxUJdVjLnnzMP', 'function': {'arguments': '{\\\"city\\\":\\\"San Francisco\\\"}', 'name': 'get_weather'}, 'type': 'function'}], 'refusal': None}, response_metadata={'token_usage': {'completion_tokens': 15, 'prompt_tokens': 56, 'total_tokens': 71, 'completion_tokens_details': {'accepted_prediction_tokens': 0, 'audio_tokens': 0, 'reasoning_tokens': 0, 'rejected_prediction_tokens': 0}, 'prompt_tokens_details': {'audio_tokens': 0, 'cached_tokens': 0}}, 'model_name': 'gpt-4o-mini-2024-07-18', 'system_fingerprint': 'fp_c4585b5b9c', 'id': 'chatcmpl-D0N6NXwN292XvRiOO9rxgQjpJ7LhK', 'service_tier': 'default', 'finish_reason': 'tool_calls', 'logprobs': None}, id='lc_run--993fbdba-846e-47cc-8e9e-cae83b5ef696-0', tool_calls=[{'name': 'get_weather', 'args': {'city': 'San Francisco'}, 'id': 'call_oyU3Xia66hbRxUJdVjLnnzMP', 'type': 'tool_call'}], usage_metadata={'input_tokens': 56, 'output_tokens': 15, 'total_tokens': 71, 'input_token_details': {'audio': 0, 'cache_read': 0}, 'output_token_details': {'audio': 0, 'reasoning': 0}})]}})\"]"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "51c51be310e84d6986e26024faadc550",
+                                "spanId": "3b7d34cd5fc6d1dd",
+                                "parentSpanId": "34974f3f5cfb0f8b",
+                                "flags": 256,
+                                "name": "model",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981174677971968",
+                                "endTimeUnixNano": "1768981176493127936",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"what is the weather in sf\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"58bb8c89-41b2-41ad-9934-a7e179b26419\"}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.content",
+                                        "value": {
+                                            "stringValue": "what is the weather in sf"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "user"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 1, \"langgraph_node\": \"model\", \"langgraph_triggers\": [\"branch:to:model\"], \"langgraph_path\": [\"__pregel_pull\", \"model\"], \"langgraph_checkpoint_ns\": \"model:3d523ee1-1a1d-fb3e-c3ce-479c8953a4b3\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "CHAIN"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_c4585b5b9c\", \"id\": \"chatcmpl-D0N6NXwN292XvRiOO9rxgQjpJ7LhK\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--993fbdba-846e-47cc-8e9e-cae83b5ef696-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "51c51be310e84d6986e26024faadc550",
+                                "spanId": "d5e41b43c4270f29",
+                                "parentSpanId": "6ece00fdc50b7b28",
+                                "flags": 256,
+                                "name": "get_weather",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981176625888000",
+                                "endTimeUnixNano": "1768981176635638016",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{'city': 'San Francisco'}"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 2, \"langgraph_node\": \"tools\", \"langgraph_triggers\": [\"__pregel_push\"], \"langgraph_path\": [\"__pregel_push\", 0, false], \"langgraph_checkpoint_ns\": \"tools:0f6c580f-bcc5-efab-7fd7-5fa38929ae85\", \"checkpoint_ns\": \"tools:0f6c580f-bcc5-efab-7fd7-5fa38929ae85\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "TOOL"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "{\"content\": \"It's always sunny in San Francisco!\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"get_weather\", \"id\": null, \"tool_call_id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"artifact\": null, \"status\": \"success\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    },
+                                    {
+                                        "key": "tool.description",
+                                        "value": {
+                                            "stringValue": "Get weather for a given city."
+                                        }
+                                    },
+                                    {
+                                        "key": "tool.name",
+                                        "value": {
+                                            "stringValue": "get_weather"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "51c51be310e84d6986e26024faadc550",
+                                "spanId": "df234ce4815b9b05",
+                                "parentSpanId": "6ece00fdc50b7b28",
+                                "flags": 256,
+                                "name": "tools_to_model",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981176651819008",
+                                "endTimeUnixNano": "1768981176653611008",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"what is the weather in sf\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"58bb8c89-41b2-41ad-9934-a7e179b26419\"}, {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_c4585b5b9c\", \"id\": \"chatcmpl-D0N6NXwN292XvRiOO9rxgQjpJ7LhK\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--993fbdba-846e-47cc-8e9e-cae83b5ef696-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}, {\"content\": \"It's always sunny in San Francisco!\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"get_weather\", \"id\": \"053f13f8-33a7-46ec-bb79-380ae882ad2a\", \"tool_call_id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"artifact\": null, \"status\": \"success\"}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.content",
+                                        "value": {
+                                            "stringValue": "what is the weather in sf"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "user"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 2, \"langgraph_node\": \"tools\", \"langgraph_triggers\": [\"__pregel_push\"], \"langgraph_path\": [\"__pregel_push\", 0, false], \"langgraph_checkpoint_ns\": \"tools:0f6c580f-bcc5-efab-7fd7-5fa38929ae85\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "CHAIN"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "model"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "51c51be310e84d6986e26024faadc550",
+                                "spanId": "6ece00fdc50b7b28",
+                                "parentSpanId": "34974f3f5cfb0f8b",
+                                "flags": 256,
+                                "name": "tools",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981176593387008",
+                                "endTimeUnixNano": "1768981176672851968",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"__type\": \"tool_call_with_context\", \"tool_call\": {\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"type\": \"tool_call\"}, \"state\": {\"messages\": [{\"content\": \"what is the weather in sf\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"58bb8c89-41b2-41ad-9934-a7e179b26419\"}, {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_c4585b5b9c\", \"id\": \"chatcmpl-D0N6NXwN292XvRiOO9rxgQjpJ7LhK\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--993fbdba-846e-47cc-8e9e-cae83b5ef696-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}]}}"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 2, \"langgraph_node\": \"tools\", \"langgraph_triggers\": [\"__pregel_push\"], \"langgraph_path\": [\"__pregel_push\", 0, false], \"langgraph_checkpoint_ns\": \"tools:0f6c580f-bcc5-efab-7fd7-5fa38929ae85\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "CHAIN"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"It's always sunny in San Francisco!\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"get_weather\", \"id\": \"053f13f8-33a7-46ec-bb79-380ae882ad2a\", \"tool_call_id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"artifact\": null, \"status\": \"success\"}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "51c51be310e84d6986e26024faadc550",
+                                "spanId": "ac39760f9600c62a",
+                                "parentSpanId": "afd33cdae738d00c",
+                                "flags": 256,
+                                "name": "ChatOpenAI",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981176736211968",
+                                "endTimeUnixNano": "1768981178072017920",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [[{\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"SystemMessage\"], \"kwargs\": {\"content\": \"You are a helpful assistant\", \"type\": \"system\"}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"HumanMessage\"], \"kwargs\": {\"content\": \"what is the weather in sf\", \"type\": \"human\", \"id\": \"58bb8c89-41b2-41ad-9934-a7e179b26419\"}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_c4585b5b9c\", \"id\": \"chatcmpl-D0N6NXwN292XvRiOO9rxgQjpJ7LhK\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"id\": \"lc_run--993fbdba-846e-47cc-8e9e-cae83b5ef696-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"type\": \"tool_call\"}], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}, \"invalid_tool_calls\": []}}, {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"ToolMessage\"], \"kwargs\": {\"content\": \"It's always sunny in San Francisco!\", \"type\": \"tool\", \"name\": \"get_weather\", \"id\": \"053f13f8-33a7-46ec-bb79-380ae882ad2a\", \"tool_call_id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"status\": \"success\"}}]]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.content",
+                                        "value": {
+                                            "stringValue": "You are a helpful assistant"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "system"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.1.message.content",
+                                        "value": {
+                                            "stringValue": "what is the weather in sf"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.1.message.role",
+                                        "value": {
+                                            "stringValue": "user"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.2.message.role",
+                                        "value": {
+                                            "stringValue": "assistant"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.arguments",
+                                        "value": {
+                                            "stringValue": "{\"city\":\"San Francisco\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.2.message.tool_calls.0.tool_call.function.name",
+                                        "value": {
+                                            "stringValue": "get_weather"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.2.message.tool_calls.0.tool_call.id",
+                                        "value": {
+                                            "stringValue": "call_oyU3Xia66hbRxUJdVjLnnzMP"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.3.message.content",
+                                        "value": {
+                                            "stringValue": "It's always sunny in San Francisco!"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.3.message.name",
+                                        "value": {
+                                            "stringValue": "get_weather"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.3.message.role",
+                                        "value": {
+                                            "stringValue": "tool"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.3.message.tool_call_id",
+                                        "value": {
+                                            "stringValue": "call_oyU3Xia66hbRxUJdVjLnnzMP"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.invocation_parameters",
+                                        "value": {
+                                            "stringValue": "{\"model\": \"gpt-4o-mini\", \"model_name\": \"gpt-4o-mini\", \"stream\": false, \"_type\": \"openai-chat\", \"stop\": null, \"tools\": [{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get weather for a given city.\", \"parameters\": {\"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.model_name",
+                                        "value": {
+                                            "stringValue": "gpt-4o-mini-2024-07-18"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.output_messages.0.message.content",
+                                        "value": {
+                                            "stringValue": "The weather in San Francisco is sunny today."
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.output_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "assistant"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.provider",
+                                        "value": {
+                                            "stringValue": "openai"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.system",
+                                        "value": {
+                                            "stringValue": "openai"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.completion",
+                                        "value": {
+                                            "intValue": "10"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.completion_details.audio",
+                                        "value": {
+                                            "intValue": "0"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.completion_details.reasoning",
+                                        "value": {
+                                            "intValue": "0"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.prompt",
+                                        "value": {
+                                            "intValue": "86"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.prompt_details.audio",
+                                        "value": {
+                                            "intValue": "0"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.prompt_details.cache_read",
+                                        "value": {
+                                            "intValue": "0"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.token_count.total",
+                                        "value": {
+                                            "intValue": "96"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.tools.0.tool.json_schema",
+                                        "value": {
+                                            "stringValue": "{\"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"description\": \"Get weather for a given city.\", \"parameters\": {\"properties\": {\"city\": {\"type\": \"string\"}}, \"required\": [\"city\"], \"type\": \"object\"}}}"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 3, \"langgraph_node\": \"model\", \"langgraph_triggers\": [\"branch:to:model\"], \"langgraph_path\": [\"__pregel_pull\", \"model\"], \"langgraph_checkpoint_ns\": \"model:fde8e523-5e5d-0ce8-3267-28a52e72be40\", \"checkpoint_ns\": \"model:fde8e523-5e5d-0ce8-3267-28a52e72be40\", \"ls_provider\": \"openai\", \"ls_model_name\": \"gpt-4o-mini\", \"ls_model_type\": \"chat\", \"ls_temperature\": null}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "LLM"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "{\"generations\": [[{\"text\": \"The weather in San Francisco is sunny today.\", \"generation_info\": {\"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ChatGeneration\", \"message\": {\"lc\": 1, \"type\": \"constructor\", \"id\": [\"langchain\", \"schema\", \"messages\", \"AIMessage\"], \"kwargs\": {\"content\": \"The weather in San Francisco is sunny today.\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 10, \"prompt_tokens\": 86, \"total_tokens\": 96, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6PfB22irhsfw9UfPG2Dd98FV7m\", \"service_tier\": \"default\", \"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ai\", \"id\": \"lc_run--02bd0a7e-7d4a-40d4-8201-6f71e6923af7-0\", \"usage_metadata\": {\"input_tokens\": 86, \"output_tokens\": 10, \"total_tokens\": 96, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}, \"tool_calls\": [], \"invalid_tool_calls\": []}}}]], \"llm_output\": {\"token_usage\": {\"completion_tokens\": 10, \"prompt_tokens\": 86, \"total_tokens\": 96, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6PfB22irhsfw9UfPG2Dd98FV7m\", \"service_tier\": \"default\"}, \"run\": null, \"type\": \"LLMResult\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "51c51be310e84d6986e26024faadc550",
+                                "spanId": "135eeb180a25d7a5",
+                                "parentSpanId": "afd33cdae738d00c",
+                                "flags": 256,
+                                "name": "model_to_tools",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981178083686144",
+                                "endTimeUnixNano": "1768981178084583168",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"what is the weather in sf\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"58bb8c89-41b2-41ad-9934-a7e179b26419\"}, {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_c4585b5b9c\", \"id\": \"chatcmpl-D0N6NXwN292XvRiOO9rxgQjpJ7LhK\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--993fbdba-846e-47cc-8e9e-cae83b5ef696-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}, {\"content\": \"It's always sunny in San Francisco!\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"get_weather\", \"id\": \"053f13f8-33a7-46ec-bb79-380ae882ad2a\", \"tool_call_id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"artifact\": null, \"status\": \"success\"}, {\"content\": \"The weather in San Francisco is sunny today.\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 10, \"prompt_tokens\": 86, \"total_tokens\": 96, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6PfB22irhsfw9UfPG2Dd98FV7m\", \"service_tier\": \"default\", \"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--02bd0a7e-7d4a-40d4-8201-6f71e6923af7-0\", \"tool_calls\": [], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 86, \"output_tokens\": 10, \"total_tokens\": 96, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.content",
+                                        "value": {
+                                            "stringValue": "what is the weather in sf"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "user"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 3, \"langgraph_node\": \"model\", \"langgraph_triggers\": [\"branch:to:model\"], \"langgraph_path\": [\"__pregel_pull\", \"model\"], \"langgraph_checkpoint_ns\": \"model:fde8e523-5e5d-0ce8-3267-28a52e72be40\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "CHAIN"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "__end__"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "51c51be310e84d6986e26024faadc550",
+                                "spanId": "afd33cdae738d00c",
+                                "parentSpanId": "34974f3f5cfb0f8b",
+                                "flags": 256,
+                                "name": "model",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981176707503104",
+                                "endTimeUnixNano": "1768981178098889216",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"what is the weather in sf\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"58bb8c89-41b2-41ad-9934-a7e179b26419\"}, {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_c4585b5b9c\", \"id\": \"chatcmpl-D0N6NXwN292XvRiOO9rxgQjpJ7LhK\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--993fbdba-846e-47cc-8e9e-cae83b5ef696-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}, {\"content\": \"It's always sunny in San Francisco!\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"get_weather\", \"id\": \"053f13f8-33a7-46ec-bb79-380ae882ad2a\", \"tool_call_id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"artifact\": null, \"status\": \"success\"}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.content",
+                                        "value": {
+                                            "stringValue": "what is the weather in sf"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "user"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\", \"langgraph_step\": 3, \"langgraph_node\": \"model\", \"langgraph_triggers\": [\"branch:to:model\"], \"langgraph_path\": [\"__pregel_pull\", \"model\"], \"langgraph_checkpoint_ns\": \"model:fde8e523-5e5d-0ce8-3267-28a52e72be40\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "CHAIN"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"The weather in San Francisco is sunny today.\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 10, \"prompt_tokens\": 86, \"total_tokens\": 96, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6PfB22irhsfw9UfPG2Dd98FV7m\", \"service_tier\": \"default\", \"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--02bd0a7e-7d4a-40d4-8201-6f71e6923af7-0\", \"tool_calls\": [], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 86, \"output_tokens\": 10, \"total_tokens\": 96, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "unknown_service"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.language",
+                            "value": {
+                                "stringValue": "python"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.name",
+                            "value": {
+                                "stringValue": "opentelemetry"
+                            }
+                        },
+                        {
+                            "key": "telemetry.sdk.version",
+                            "value": {
+                                "stringValue": "1.39.1"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "openinference.instrumentation.langchain",
+                            "version": "0.1.58"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "51c51be310e84d6986e26024faadc550",
+                                "spanId": "34974f3f5cfb0f8b",
+                                "flags": 256,
+                                "name": "LangGraph",
+                                "kind": 1,
+                                "startTimeUnixNano": "1768981174667411200",
+                                "endTimeUnixNano": "1768981178121121024",
+                                "attributes": [
+                                    {
+                                        "key": "input.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "input.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"role\": \"user\", \"content\": \"what is the weather in sf\"}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "llm.input_messages.0.message.role",
+                                        "value": {
+                                            "stringValue": "user"
+                                        }
+                                    },
+                                    {
+                                        "key": "metadata",
+                                        "value": {
+                                            "stringValue": "{\"user_id\": \"123\", \"conversation_id\": \"459\"}"
+                                        }
+                                    },
+                                    {
+                                        "key": "openinference.span.kind",
+                                        "value": {
+                                            "stringValue": "CHAIN"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.mime_type",
+                                        "value": {
+                                            "stringValue": "application/json"
+                                        }
+                                    },
+                                    {
+                                        "key": "output.value",
+                                        "value": {
+                                            "stringValue": "{\"messages\": [{\"content\": \"what is the weather in sf\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"human\", \"name\": null, \"id\": \"58bb8c89-41b2-41ad-9934-a7e179b26419\"}, {\"content\": \"\", \"additional_kwargs\": {\"tool_calls\": [{\"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"function\": {\"arguments\": \"{\\\"city\\\":\\\"San Francisco\\\"}\", \"name\": \"get_weather\"}, \"type\": \"function\"}], \"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 15, \"prompt_tokens\": 56, \"total_tokens\": 71, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_c4585b5b9c\", \"id\": \"chatcmpl-D0N6NXwN292XvRiOO9rxgQjpJ7LhK\", \"service_tier\": \"default\", \"finish_reason\": \"tool_calls\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--993fbdba-846e-47cc-8e9e-cae83b5ef696-0\", \"tool_calls\": [{\"name\": \"get_weather\", \"args\": {\"city\": \"San Francisco\"}, \"id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"type\": \"tool_call\"}], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 56, \"output_tokens\": 15, \"total_tokens\": 71, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}, {\"content\": \"It's always sunny in San Francisco!\", \"additional_kwargs\": {}, \"response_metadata\": {}, \"type\": \"tool\", \"name\": \"get_weather\", \"id\": \"053f13f8-33a7-46ec-bb79-380ae882ad2a\", \"tool_call_id\": \"call_oyU3Xia66hbRxUJdVjLnnzMP\", \"artifact\": null, \"status\": \"success\"}, {\"content\": \"The weather in San Francisco is sunny today.\", \"additional_kwargs\": {\"refusal\": null}, \"response_metadata\": {\"token_usage\": {\"completion_tokens\": 10, \"prompt_tokens\": 86, \"total_tokens\": 96, \"completion_tokens_details\": {\"accepted_prediction_tokens\": 0, \"audio_tokens\": 0, \"reasoning_tokens\": 0, \"rejected_prediction_tokens\": 0}, \"prompt_tokens_details\": {\"audio_tokens\": 0, \"cached_tokens\": 0}}, \"model_name\": \"gpt-4o-mini-2024-07-18\", \"system_fingerprint\": \"fp_8bbc38b4db\", \"id\": \"chatcmpl-D0N6PfB22irhsfw9UfPG2Dd98FV7m\", \"service_tier\": \"default\", \"finish_reason\": \"stop\", \"logprobs\": null}, \"type\": \"ai\", \"name\": null, \"id\": \"lc_run--02bd0a7e-7d4a-40d4-8201-6f71e6923af7-0\", \"tool_calls\": [], \"invalid_tool_calls\": [], \"usage_metadata\": {\"input_tokens\": 86, \"output_tokens\": 10, \"total_tokens\": 96, \"input_token_details\": {\"audio\": 0, \"cache_read\": 0}, \"output_token_details\": {\"audio\": 0, \"reasoning\": 0}}}]}"
+                                        }
+                                    },
+                                    {
+                                        "key": "session.id",
+                                        "value": {
+                                            "stringValue": "459"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
