@@ -1,0 +1,298 @@
+# Cursor Rules for Arcane Backend
+
+This file contains coding standards, patterns, and best practices established for this NestJS project.
+
+## General Principles
+
+### Clean Code
+- **Never use `console.log`** - Always use NestJS `Logger` with proper context:
+  ```typescript
+  private readonly logger = new Logger(ServiceName.name);
+  this.logger.log('Message');
+  this.logger.debug('Debug info');
+  this.logger.error('Error', error.stack);
+  ```
+
+- **Standardized Error Messages** - Always use `ERROR_MESSAGES` constants from `src/common/constants/error-messages.constants.ts`:
+  ```typescript
+  import { ERROR_MESSAGES, formatError } from '../../common/constants/error-messages.constants';
+  throw new NotFoundException(formatError(ERROR_MESSAGES.PROJECT_NOT_FOUND, projectId));
+  ```
+
+- **Meaningful Naming** - Use descriptive names that clearly indicate purpose:
+  - Services: `ProjectManagementService`, `RoleRetrievalService`
+  - Methods: `getByIdAndOrganisationOrThrow`, `createPendingScoreResults`
+  - Variables: `evaluationId`, `organisationId` (not `evalId`, `orgId`)
+
+- **Single Responsibility Principle** - Each service should have one clear purpose. Split large services into focused services.
+
+## Service Layer Architecture
+
+### Service Organization
+- **Facade Pattern** - Large services should delegate to specialized services:
+  ```typescript
+  @Injectable()
+  export class ProjectsService {
+    constructor(
+      private readonly projectManagementService: ProjectManagementService,
+      private readonly projectMembershipService: ProjectMembershipService,
+    ) {}
+    // Delegate methods...
+  }
+  ```
+
+- **Service Naming Conventions:**
+  - `*ManagementService` - CRUD operations (create, update, delete, find)
+  - `*MembershipService` - Membership/relationship management
+  - `*RetrievalService` - Data retrieval and querying
+  - `*WriterService` - Write operations with validation
+  - `*LoaderService` - Loading entities with relations
+  - `*OrchestratorService` - Orchestrating complex workflows
+  - `*BuilderService` - Building complex data structures
+  - `*GroupingService` - Grouping and aggregation logic
+
+### Service Size Guidelines
+- **Target**: Keep services under 300 lines
+- **Maximum**: Split services exceeding 400 lines
+- **Facade Services**: Should be mostly delegation (30-100 lines)
+
+## Database & Entities
+
+### Audit Fields
+- **Always use standardized audit fields:**
+  - `createdById: string` - User who created the record
+  - `updatedById: string | null` - User who last updated (nullable)
+  - `createdAt: Date` - Creation timestamp (`@CreateDateColumn`)
+  - `updatedAt: Date` - Last update timestamp (`@UpdateDateColumn`)
+
+### Entity Relationships
+- **Foreign Keys** - Always define proper `@ManyToOne` or `@OneToMany` relationships with appropriate `onDelete` actions
+- **Computed Properties** - Use getters for derived values (e.g., `Role.scope` derived from `organisationId`/`projectId`)
+- **Avoid Redundancy** - Don't store data that can be derived (e.g., `Evaluation.organisationId` derived from `Project`)
+
+### Transactions
+- **Use transactions for multi-step operations:**
+  ```typescript
+  return this.repository.manager.transaction(async (manager) => {
+    const repo = manager.getRepository(Entity);
+    // Multiple operations that must be atomic
+  });
+  ```
+- **Note**: Single `save()` operations don't need explicit transactions (TypeORM handles internally)
+
+## DTOs (Data Transfer Objects)
+
+### Naming Conventions
+- **Request DTOs**: Must end with `RequestDto` (e.g., `CreateProjectRequestDto`, `UpdateProjectRequestDto`)
+- **Response DTOs**: Must end with `ResponseDto` (e.g., `ProjectResponseDto`, `EvaluationStatisticsResponseDto`)
+- **Message DTOs**: Use `*MessageResponseDto` for simple message responses
+
+### DTO Structure
+- Use `class-validator` decorators for validation
+- Use `class-transformer` decorators for transformation
+- Keep DTOs focused - one DTO per operation type
+
+## REST API Design
+
+### HTTP Status Codes
+- **201 Created** - For POST requests that create resources
+- **204 No Content** - For DELETE requests (no response body)
+- **200 OK** - For GET and PUT requests with response body
+- **400 Bad Request** - For validation errors
+- **401 Unauthorized** - For authentication failures
+- **403 Forbidden** - For authorization failures
+- **404 Not Found** - For missing resources
+
+### Endpoint Naming
+- Use resource-based URLs: `/v1/organisations/:organisationId/projects/:projectId/...`
+- Use plural nouns: `/projects`, `/organisations`, `/evaluations`
+- Use HTTP verbs correctly: GET (read), POST (create), PUT (update), DELETE (remove)
+- Be consistent: `/projects/:id/members` not `/projects/:id/users`
+
+### Controller Structure
+```typescript
+@Controller('/v1/organisations/:organisationId/projects/:projectId/resource')
+export class ResourceController {
+  @Get()
+  async findAll() { }
+
+  @Get(':id')
+  async findOne() { }
+
+  @Post()
+  @HttpCode(HttpStatus.CREATED)
+  async create() { }
+
+  @Put(':id')
+  async update() { }
+
+  @Delete(':id')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  async remove() { }
+}
+```
+
+## Caching Strategy
+
+### Cache Implementation
+- **Use CACHE_MANAGER** - Inject via `@Inject(CACHE_MANAGER)`
+- **Cache Keys** - Use consistent naming: `resource:${id}`, `user:roles:${userId}`, `eval:stats:dataset:${evaluationId}`
+- **TTL Values**:
+  - High-frequency data (roles, users): 1 hour (3600s)
+  - Medium-frequency data (projects, orgs): 30 minutes (1800s)
+  - Low-frequency data (statistics): 15 minutes (900s)
+
+### Cache Invalidation
+- **Always invalidate** cache when data changes:
+  ```typescript
+  await this.cacheManager.del(`project:${projectId}`);
+  ```
+- **Pattern-based invalidation** - For user roles, invalidate all related keys
+
+### Environment Configuration
+- **Redis**: Set `REDIS_ENABLED=true` and `REDIS_URL=redis://...`
+- **In-Memory**: Default fallback (no env vars needed)
+
+## Error Handling
+
+### Exception Types
+- `NotFoundException` - Resource not found
+- `BadRequestException` - Validation errors, invalid input
+- `UnauthorizedException` - Authentication required
+- `ForbiddenException` - Insufficient permissions
+- `ConflictException` - Resource conflicts
+
+### Error Message Format
+- Always use `formatError()` utility:
+  ```typescript
+  throw new NotFoundException(formatError(ERROR_MESSAGES.PROJECT_NOT_FOUND, projectId));
+  ```
+- Add new error messages to `ERROR_MESSAGES` constants file
+
+## TypeScript Best Practices
+
+### Type Safety
+- **Avoid `any`** - Use proper types or `unknown` if necessary
+- **Use interfaces** - For DTOs and data structures
+- **Use enums** - For fixed sets of values (e.g., `EvaluationScope`, `ScoringType`)
+
+### Imports
+- Group imports: external packages, then internal modules
+- Use absolute paths for common modules: `'../../common/constants/...'`
+- Avoid circular dependencies
+
+## Module Organization
+
+### Module Structure
+```
+module-name/
+  ├── dto/
+  │   ├── request/
+  │   └── response/
+  ├── entities/
+  ├── mappers/
+  ├── services/
+  ├── controllers/
+  ├── guards/
+  ├── validators/
+  └── module-name.module.ts
+```
+
+### Module Dependencies
+- Import only what's needed
+- Export services that other modules use
+- Use `@Global()` sparingly (only for CacheModule, ConfigModule)
+
+## Testing Considerations
+
+### Service Testing
+- Mock dependencies using `jest.fn()`
+- Test error cases, not just happy paths
+- Test edge cases (null, empty arrays, etc.)
+
+### Integration Testing
+- Use test database
+- Clean up after tests
+- Test full request/response cycle
+
+## Code Review Checklist
+
+Before submitting code, ensure:
+- [ ] No `console.log` statements (use Logger)
+- [ ] Error messages use ERROR_MESSAGES constants
+- [ ] Services follow SRP (under 300 lines ideally)
+- [ ] DTOs follow naming conventions (RequestDto/ResponseDto)
+- [ ] HTTP status codes are correct
+- [ ] Cache invalidation is implemented where needed
+- [ ] Transactions are used for multi-step operations
+- [ ] Audit fields are standardized (createdById, updatedById, etc.)
+- [ ] **Audit**: Create/update/remove (and rerun etc.) record audit events; controllers pass `organisationId` and `userSession?.user?.id`; service specs assert `AuditService.record`; see **Auditing** above
+- [ ] TypeScript types are properly defined (no `any`)
+- [ ] Imports are organized and clean
+
+## Performance Considerations
+
+### Database Queries
+- Use `relations` in TypeORM queries to avoid N+1 problems
+- Use QueryBuilder for complex queries
+- Add indexes for frequently queried fields
+- Use batch operations (`save([...entities])`) when possible
+
+### Caching
+- Cache frequently accessed, relatively static data
+- Set appropriate TTLs based on data change frequency
+- Invalidate cache when data changes
+
+## Security
+
+### Authorization
+- Always check permissions via Guards
+- Verify organisation/project membership before operations
+- Use RBAC services for permission checks
+
+### Input Validation
+- Validate all inputs using DTOs with `class-validator`
+- Sanitize user inputs
+- Use parameterized queries (TypeORM handles this)
+
+## Auditing
+
+### Before Adding a Feature: Audit Planning
+When adding or changing a feature, **before implementing** identify what needs to be audited:
+
+- **Create** (POST): record `afterState` and `metadata: { creatorId, organisationId, projectId? }`.
+- **Update** (PUT/PATCH): record `beforeState` (before apply), `afterState` (after reload), and `metadata: { changedFields, organisationId, projectId? }`.
+- **Remove** (DELETE): record `beforeState`, `afterState: null`, and `metadata: { organisationId, projectId? }`.
+- **Special actions** (e.g. `rerun`, `clone`): treat like create for the new resource, with `metadata: { sourceId/sourceEvaluationId, organisationId, projectId?, creatorId }` as appropriate.
+
+Only **state-changing operations** triggered by user or system actors need audit; read-only and derived data do not.
+
+### Audit Implementation Pattern
+- Inject **`AuditService`** in the service that performs the persistence (or the writer/management service it delegates to).
+- Add **`toAuditState(entity)`** returning a small, JSON-serialisable snapshot (id, name, key FKs, enums; exclude large or volatile fields like `results`, `metadata` blobs, or full relations).
+- Call **`auditService.record({ action, actorId, actorType: 'user', resourceType, resourceId, organisationId, projectId?, beforeState?, afterState?, metadata })`** right after the write (or before for `beforeState` on update/delete).
+- **Controllers**: For audited endpoints, pass `organisationId` (from `@Param('organisationId')`) and `userSession?.user?.id` (from `@Session() userSession`) into the service so it can populate `actorId`, `organisationId`, and `projectId`.
+- **Module**: `imports` **`AuditModule`** so `AuditService` is available.
+- **Action names**: use `resource.action` (e.g. `evaluation.created`, `evaluation.deleted`, `experiment.rerun`). See `docs/decoupled-auditing.md` for scope and schema.
+
+### Audit Tests
+- **Service specs**: mock `AuditService` and assert `record` was called with `expect.objectContaining({ action: 'resource.action', ... })` for create/update/remove/rerun.
+- **Controller specs**: ensure the service is called with `organisationId` and `userSession.user.id` (or equivalent) where audit is recorded.
+
+## Documentation
+
+### Code Comments
+- Use JSDoc for public methods:
+  ```typescript
+  /**
+   * Get project by ID and organisation, throw if not found
+   */
+  async getByIdAndOrganisationOrThrow(...) { }
+  ```
+- Explain "why" not "what" in comments
+- Keep comments up-to-date with code changes
+
+### README Files
+- Document module purpose and usage
+- Include examples for complex operations
+- Keep migration READMEs updated

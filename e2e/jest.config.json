@@ -1,0 +1,46 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "maxWorkers": 1,
+  "transform": {
+    "^.+\\.(t|j)s$": [
+      "ts-jest",
+      {
+        "isolatedModules": true,
+        "transpileOnly": true,
+        "tsconfig": {
+          "isolatedModules": true,
+          "skipLibCheck": true,
+          "esModuleInterop": true
+        }
+      }
+    ],
+    "^.+\\.mjs$": [
+      "@swc/jest",
+      {
+        "module": { "type": "es6" },
+        "jsc": {
+          "target": "es2020",
+          "parser": { "syntax": "ecmascript" }
+        }
+      }
+    ]
+  },
+  "transformIgnorePatterns": [
+    "node_modules/(?!(better-auth|@better-auth/core|better-call|@thallesp/nestjs-better-auth)/)"
+  ],
+  "moduleNameMapper": {
+    "^src/auth$": "<rootDir>/mocks/auth.mock.ts",
+    "^\\.\\/auth$": "<rootDir>/mocks/auth.mock.ts",
+    "^src/(.*)$": "<rootDir>/../src/$1",
+    "^@thallesp/nestjs-better-auth$": "<rootDir>/mocks/@thallesp-nestjs-better-auth.mock.ts",
+    "^better-auth$": "<rootDir>/mocks/better-auth.mock.ts",
+    "^@golevelup/nestjs-rabbitmq$": "<rootDir>/mocks/golevelup-nestjs-rabbitmq.mock.ts"
+  },
+  "globalSetup": "<rootDir>/globalSetup.ts",
+  "globalTeardown": "<rootDir>/globalTeardown.ts",
+  "setupFiles": ["<rootDir>/setup/setup-reflect-metadata.ts"],
+  "setupFilesAfterEnv": ["<rootDir>/setup/setup-testcontainers.ts"]
+}

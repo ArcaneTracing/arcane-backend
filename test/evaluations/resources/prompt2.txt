@@ -1,0 +1,5 @@
+Using the context below, provide a detailed answer to the question.
+
+Question: {{query}}
+
+Context: {{retrieved_contexts}}

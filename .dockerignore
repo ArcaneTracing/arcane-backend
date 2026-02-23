@@ -1,0 +1,31 @@
+# Dependencies (reinstalled in container)
+node_modules/
+
+# Build output (built in container)
+dist/
+
+# Environment and secrets
+.env
+.env.*
+!.env-example
+
+# Git
+.git/
+.gitignore
+
+# Tests and coverage
+coverage/
+test/
+e2e/
+*.spec.ts
+*.test.ts
+
+# IDE and OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Logs and misc
+*.log
+.sonar/

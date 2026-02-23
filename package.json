@@ -1,0 +1,200 @@
+{
+  "name": "arcane-backend",
+  "version": "0.0.1",
+  "description": "Backend for Arcane application.",
+  "author": "",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"e2e/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/src/main",
+    "lint": "eslint \"{src,apps,libs,test,e2e}/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./e2e/jest.config.json --detectOpenHandles",
+    "sonar": "docker run --rm --network arcane_arcanenet -v $(pwd):/usr/src -w /usr/src -e SONAR_TOKEN sonarsource/sonar-scanner-cli -Dsonar.projectKey=arcane -Dsonar.sources=src -Dsonar.host.url=http://sonarqube:9000 -Dsonar.login=${SONAR_TOKEN:-admin}",
+    "sonar:local": "docker run --rm --network host -v $(pwd):/usr/src -w /usr/src -e SONAR_TOKEN sonarsource/sonar-scanner-cli -Dsonar.login=${SONAR_TOKEN:-admin}",
+    "sonar:start": "cd localsetup && docker-compose up -d sonarqube-db sonarqube",
+    "sonar:stop": "cd localsetup && docker-compose stop sonarqube sonarqube-db",
+    "sonar:logs": "cd localsetup && docker-compose logs -f sonarqube",
+    "migration:generate": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:generate migrations/ -d data-source.ts",
+    "migration:create": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:create migrations/",
+    "migration:run": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:run -d data-source.ts",
+    "migration:revert": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:revert -d data-source.ts",
+    "migration:show": "ts-node -r tsconfig-paths/register node_modules/typeorm/cli.js migration:show -d data-source.ts",
+    "db:reset": "ts-node -r tsconfig-paths/register scripts/reset-database.ts"
+  },
+  "dependencies": {
+    "@better-auth/sso": "^1.4.18",
+    "@clickhouse/client": "^1.16.0",
+    "@golevelup/nestjs-rabbitmq": "^7.1.1",
+    "@keyv/redis": "^5.1.5",
+    "@nestjs/axios": "^4.0.1",
+    "@nestjs/cache-manager": "^3.1.0",
+    "@nestjs/common": "^11.1.12",
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/core": "^11.1.12",
+    "@nestjs/mapped-types": "^2.1.0",
+    "@nestjs/platform-express": "^11.1.12",
+    "@nestjs/schedule": "^6.1.1",
+    "@nestjs/swagger": "^11.2.5",
+    "@nestjs/terminus": "^11.0.0",
+    "@nestjs/typeorm": "^11.0.0",
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.212.0",
+    "@opentelemetry/otlp-transformer": "^0.212.0",
+    "@opentelemetry/sdk-node": "^0.212.0",
+    "@opentelemetry/sdk-trace-node": "^2.4.0",
+    "@react-email/render": "^2.0.4",
+    "@thallesp/nestjs-better-auth": "^2.2.2",
+    "@types/js-yaml": "^4.0.9",
+    "axios": "^1.13.2",
+    "better-auth": "^1.4.15",
+    "cache-manager": "^7.2.8",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.3",
+    "cookie-parser": "^1.4.7",
+    "csv-parse": "^6.1.0",
+    "csv-stringify": "^6.6.0",
+    "js-yaml": "^4.1.1",
+    "jstat": "^1.9.6",
+    "kafkajs": "^2.2.4",
+    "keyv": "^5.5.5",
+    "nodemailer": "^8.0.1",
+    "pg": "^8.17.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "swagger-ui-express": "^5.0.1",
+    "typeorm": "^0.3.28",
+    "@stdlib/stats-incr-mean": "^0.2.3",
+    "@stdlib/stats-incr-variance": "^0.2.3",
+    "@stdlib/stats-wilcoxon": "^0.2.3"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.16",
+    "@nestjs/schematics": "^11.0.9",
+    "@nestjs/testing": "^11.1.12",
+    "@swc/core": "^1.15.10",
+    "@swc/jest": "^0.2.39",
+    "@testcontainers/postgresql": "^11.11.0",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^25.0.9",
+    "@types/supertest": "^6.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.53.0",
+    "@typescript-eslint/parser": "^8.53.0",
+    "eslint": "^9.39.3",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "jest": "^30.2.0",
+    "prettier": "^3.8.0",
+    "source-map-support": "^0.5.21",
+    "supertest": "^7.2.2",
+    "testcontainers": "^11.11.0",
+    "ts-jest": "^29.4.6",
+    "ts-loader": "^9.5.4",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.0",
+    "wtfnode": "^0.10.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": ".",
+    "testRegex": "(test/.*\\.spec\\.ts$|src/.*\\.spec\\.ts$)",
+    "transform": {
+      "^.+\\.(t|j)s$": [
+        "ts-jest",
+        {
+          "isolatedModules": true,
+          "transpileOnly": true,
+          "tsconfig": {
+            "isolatedModules": true,
+            "skipLibCheck": true,
+            "esModuleInterop": true
+          }
+        }
+      ],
+      "^.+\\.mjs$": [
+        "@swc/jest",
+        {
+          "module": {
+            "type": "es6"
+          },
+          "jsc": {
+            "target": "es2020",
+            "parser": {
+              "syntax": "ecmascript"
+            }
+          }
+        }
+      ]
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(better-auth|better-call|@thallesp/nestjs-better-auth)/)"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.(t|j)s",
+      "!src/**/*.dto.ts",
+      "!src/**/*.entity.ts",
+      "!src/**/*.interface.ts",
+      "!src/**/*.enum.ts",
+      "!src/**/*.schema.ts",
+      "!src/**/*.module.ts",
+      "!src/**/index.ts",
+      "!src/**/*.spec.ts",
+      "!src/main.ts",
+      "!src/auth.ts"
+    ],
+    "coverageDirectory": "coverage",
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^src/(.*)$": "<rootDir>/src/$1",
+      "^@thallesp/nestjs-better-auth$": "<rootDir>/test/mocks/@thallesp-nestjs-better-auth.mock.ts"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/",
+      "/coverage/",
+      "/migrations/"
+    ],
+    "modulePathIgnorePatterns": [
+      "/dist/",
+      "/coverage/",
+      "/migrations/"
+    ],
+    "maxWorkers": 4,
+    "cache": true,
+    "testTimeout": 10000,
+    "logHeapUsage": false,
+    "detectOpenHandles": false,
+    "forceExit": true,
+    "clearMocks": true,
+    "resetMocks": false,
+    "restoreMocks": false,
+    "bail": false,
+    "coverageThreshold": {
+      "global": {
+        "branches": 75,
+        "functions": 75,
+        "lines": 75,
+        "statements": 75
+      }
+    }
+  }
+}

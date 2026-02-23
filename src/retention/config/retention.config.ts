@@ -1,0 +1,32 @@
+export const DEFAULT_RETENTION = {
+  AUDIT_LOGS: 365,
+  EVALUATIONS: 90,
+  EXPERIMENTS: 90,
+} as const;
+
+export const RETENTION_JOB_CRON = process.env.RETENTION_JOB_CRON || "0 2 * * *";
+
+export const RETENTION_CONFIG = {
+  AUDIT_LOGS: {
+    DEFAULT_DAYS: 365,
+    MIN_DAYS: 30,
+    MAX_DAYS: 2555,
+  },
+
+  EVALUATIONS: {
+    DEFAULT_DAYS: 90,
+    MIN_DAYS: 7,
+    MAX_DAYS: 365,
+  },
+
+  EXPERIMENTS: {
+    DEFAULT_DAYS: 90,
+    MIN_DAYS: 7,
+    MAX_DAYS: 365,
+  },
+
+  INVITATIONS: {
+    EXPIRED_REJECTED_RETENTION_DAYS: 90,
+    ACCEPTED_RETENTION_DAYS: 7,
+  },
+} as const;

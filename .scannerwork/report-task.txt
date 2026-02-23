@@ -1,0 +1,6 @@
+projectKey=backend-cerbex
+serverUrl=http://192.168.1.104:9001
+serverVersion=26.1.0.118079
+dashboardUrl=http://192.168.1.104:9001/dashboard?id=backend-cerbex
+ceTaskId=b4e1024f-933d-4e2b-a137-98d2d1a8bc30
+ceTaskUrl=http://192.168.1.104:9001/api/ce/task?id=b4e1024f-933d-4e2b-a137-98d2d1a8bc30

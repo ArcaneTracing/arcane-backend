@@ -1,0 +1,32 @@
+{
+    "meta": [
+      { "name": "TraceId", "type": "String" },
+      { "name": "ServiceName", "type": "String" },
+      { "name": "SpanName", "type": "String" },
+      { "name": "Timestamp", "type": "DateTime64(3)" },
+      { "name": "Duration", "type": "UInt64" }
+    ],
+    "data": [
+      {
+        "TraceId": "fa6471d32539061bd70f55719bf53bc",
+        "ServiceName": "unknown_service",
+        "SpanName": "LangGraph",
+        "Timestamp": "2026-01-21 07:41:12.381",
+        "Duration": 2823264
+      },
+      {
+        "TraceId": "0c9d2f67c3fe4d9b8b1a1f1b1e2a9c0f",
+        "ServiceName": "api-gateway",
+        "SpanName": "HTTP GET /checkout",
+        "Timestamp": "2026-01-21 07:39:03.105",
+        "Duration": 154321
+      }
+    ],
+    "rows": 2,
+    "statistics": {
+      "elapsed": 0.012,
+      "rows_read": 48219,
+      "bytes_read": 7123456
+    }
+  }
+  
